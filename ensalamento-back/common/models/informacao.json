@@ -1,5 +1,5 @@
 {
-  "name": "informacao",
+  "name": "Informacao",
   "plural": "informacoes",
   "base": "PersistedModel",
   "idInjection": true,
@@ -36,7 +36,20 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "turmas": {
+      "type": "hasMany",
+      "model": "Turma",
+      "foreignKey": "turmaId",
+      "required": false
+    },
+    "responsavel": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "usuarioId",
+      "required": true
+    }
+  },
   "acls": [],
   "methods": {}
 }
