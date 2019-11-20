@@ -112,8 +112,8 @@
     "dataSource": "ensalamento",
     "public": true
   },
-  "informacao": {
-    "dataSource": "db",
+  "Informacao": {
+    "dataSource": "ensalamento",
     "public": true
   }
 }

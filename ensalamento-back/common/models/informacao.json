@@ -1,5 +1,5 @@
 {
-  "name": "informacao",
+  "name": "Informacao",
   "plural": "informacoes",
   "base": "PersistedModel",
   "idInjection": true,
@@ -8,20 +8,6 @@
   },
   "properties": {
     "mensagem": {
-      "type": "string",
-      "required": true
-    },
-    "responsavel": {
-      "type": "string",
-      "required": true
-    },
-    "sala": {
-      "type": "string"
-    },
-    "turma": {
-      "type": "string"
-    },
-    "orgao": {
       "type": "string",
       "required": true
     },
@@ -36,7 +22,59 @@
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [],
+  "relations": {
+    "orgao": {
+      "type": "embedsOne",
+      "model": "Orgao",
+      "foreignKey": "orgaoId",
+      "required": true
+    },
+    "salas": {
+      "type": "embedsMany",
+      "model": "Sala",
+      "foreignKey": "salaId",      "required": false
+    },
+    "turmas": {
+      "type": "embedsMany",
+      "model": "Turma",
+      "foreignKey": "turmaId",
+      "required": false,
+      "options": {
+        "validate": false
+      }
+    },
+    "responsavel": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "usuarioId",
+      "required": true
+    }
+  },
+  "acls": [
+{
+      "principalType": "WRITE",
+      "principalId": "servidor",
+      "permission": "ALLOW",
+      "property": ""
+    },
+    {
+      "principalType": "READ",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": ""
+    },
+    {
+      "principalType": "WRITE",
+      "principalId": "secretario",
+      "permission": "ALLOW",
+      "property": ""
+    },
+    {
+      "principalType": "WRITE",
+      "principalId": "professor",
+      "permission": "ALLOW",
+      "property": ""
+    }
+],
   "methods": {}
 }
