@@ -16,7 +16,6 @@ Após a criação da classe foi alterado o arquivo informacao.json, sendo os pri
 
 As relações criadas foram: 
 
-    ```
     "orgao": {
       "type": "embedsOne",
       "model": "Orgao",
@@ -45,4 +44,32 @@ As relações criadas foram:
       "foreignKey": "usuarioId",
       "required": true
     } 
-    ```
+
+As permissões forma setadas para que todos os usuários possam ler, apenas professores/servidores podem adicionar novas informações. As permissões criadas foram:
+
+"acls": [
+{
+      "principalType": "WRITE",
+      "principalId": "servidor",
+      "permission": "ALLOW",
+      "property": ""
+    },
+    {
+      "principalType": "READ",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": ""
+    },
+    {
+      "principalType": "WRITE",
+      "principalId": "secretario",
+      "permission": "ALLOW",
+      "property": ""
+    },
+    {
+      "principalType": "WRITE",
+      "principalId": "professor",
+      "permission": "ALLOW",
+      "property": ""
+    }
+]
