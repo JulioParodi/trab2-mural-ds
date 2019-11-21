@@ -16,7 +16,7 @@ Após a criação da classe foi alterado o arquivo informacao.json, sendo os pri
 
 As relações criadas foram: 
 
-    ```json
+    ```
     "orgao": {
       "type": "embedsOne",
       "model": "Orgao",
@@ -27,7 +27,8 @@ As relações criadas foram:
     "salas": {
       "type": "embedsMany",
       "model": "Sala",
-      "foreignKey": "salaId",      "required": false
+      "foreignKey": "salaId",      
+      "required": false
     },
     "turmas": {
       "type": "embedsMany",
