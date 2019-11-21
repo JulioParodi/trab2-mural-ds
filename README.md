@@ -47,6 +47,7 @@ As relações criadas foram:
 
 As permissões forma setadas para que todos os usuários possam ler, apenas professores/servidores podem adicionar novas informações. As permissões criadas foram:
 
+```
 "acls": [
 {
       "principalType": "WRITE",
@@ -73,3 +74,4 @@ As permissões forma setadas para que todos os usuários possam ler, apenas prof
       "property": ""
     }
 ]
+```
