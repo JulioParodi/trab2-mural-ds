@@ -4,12 +4,40 @@ Nessa trabalho foi utilizado a execução sem o docker e postgres, com banco loc
 Implementamos com o loopback uma nova classe que chamos de __Informações__, e os seguintes propriedades
 podem ser encontradas.
 
-1. Mensagem: Contém a mensagem de um professor/servidor. (obrigatório)
-2. Responsável: Pessoa que inseriu a informação. (obrigatório)
-3. Sala: Se a mensagem possuir alguma informação em relação alguma sala.
-4. Turma: Se a mensagem possuir alguma informação em relação alguma sala.
-5. Orgão: Orgão responsável.
-6. Data: Data da publicação.
-7. Validade: Informa se está valida a mensagem.
+1. __Mensagem__: Contém a mensagem de um professor/servidor. (obrigatório)
+2. __Responsável__: Pessoa que inseriu a informação. (obrigatório)
+3. __Sala__: Se a mensagem possuir alguma informação em relação alguma sala.
+4. __Turma__: Se a mensagem possuir alguma informação em relação alguma sala.
+5. __Orgão__: Orgão responsável.
+6. __Data__: Data da publicação.
+7. __Validade__: Informa se está valida a mensagem.
 
-Após a criação da classe foi alterado o arquivo informacao.json sendo os principais campos 
+Após a criação da classe foi alterado o arquivo informacao.json, sendo os principais campos alterados são __relations__ e __acls__.
+
+As relações criadas foram: 
+    ''' "orgao": {
+      "type": "embedsOne",
+      "model": "Orgao",
+      "foreignKey": "orgaoId",
+      "required": true
+    },
+    "salas": {
+      "type": "embedsMany",
+      "model": "Sala",
+      "foreignKey": "salaId",      "required": false
+    },
+    "turmas": {
+      "type": "embedsMany",
+      "model": "Turma",
+      "foreignKey": "turmaId",
+      "required": false,
+      "options": {
+        "validate": false
+      }
+    },
+    "responsavel": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "usuarioId",
+      "required": true
+    }'''
