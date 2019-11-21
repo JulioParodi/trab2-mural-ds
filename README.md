@@ -15,13 +15,15 @@ podem ser encontradas.
 Após a criação da classe foi alterado o arquivo informacao.json, sendo os principais campos alterados são __relations__ e __acls__.
 
 As relações criadas foram: 
-    ```
+
+    ```json
     "orgao": {
       "type": "embedsOne",
       "model": "Orgao",
       "foreignKey": "orgaoId",
       "required": true
     },
+
     "salas": {
       "type": "embedsMany",
       "model": "Sala",
@@ -41,4 +43,5 @@ As relações criadas foram:
       "model": "Usuario",
       "foreignKey": "usuarioId",
       "required": true
-    }```
+    } 
+    ```
